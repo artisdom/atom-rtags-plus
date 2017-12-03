@@ -103,7 +103,7 @@ class RtagsReferenceNode extends Node
 
     else
       keyView = $(document.createElement('span'))
-      keyView.text("#{@data.path}:#{displayLine}:#{displayColumn}")
+      keyView.text("#{util.pathShorten(@data.path.substr(27), 36, false)}:#{displayLine}:#{displayColumn}")
       @expander.hide()
 
     contentView = $(document.createElement('td')).addClass('text-highlight').css('white-space', 'nowrap').width('100%')
